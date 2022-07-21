@@ -25,4 +25,11 @@ spring:
     show-sql: true
   kafka:
     consumer:
-      group-id: notifications
+      bootstrap-servers:
+        - kafka:9092
+      properties:
+        spring.json.trusted.packages: "*"
+      key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+      group-id: app
+      auto-offset-reset: earliest
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
