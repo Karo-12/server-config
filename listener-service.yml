@@ -1,5 +1,7 @@
 server:
   port: 8095
+  error:
+    include-message: always
 
 eureka:
   client:
@@ -8,3 +10,19 @@ eureka:
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${random.int}s
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/postgres
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        use_jdbc_metadata_defaults: false
+        ddl-auto: update
+    show-sql: true
+  kafka:
+    consumer:
+      group-id: notifications

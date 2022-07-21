@@ -1,5 +1,7 @@
 ﻿server:
   port: 8090
+  error:
+    include-message: always
 spring:
   kafka:
     producer:
@@ -16,6 +18,18 @@ spring:
       group-id: app
       auto-offset-reset: earliest
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  datasource:
+    url: jdbc:postgresql://db:5432/postgres
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        use_jdbc_metadata_defaults: false
+        ddl-auto: update
+    show-sql: true
 
 eureka:
   client:
