@@ -24,4 +24,4 @@ spring:
         ddl-auto: update
     show-sql: true
   kafka:
-      group-id: app
+    group-id: app
