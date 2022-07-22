@@ -36,5 +36,4 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka:8190/eureka
   instance:
-    hostname: localhost
     instance-id: ${spring.application.name}:${random.int}
