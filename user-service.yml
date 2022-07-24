@@ -3,6 +3,8 @@
   error:
     include-message: always
 spring:
+  zipkin:
+    base-url: http://zipkin:9411
   kafka:
     producer:
       bootstrap-servers:
@@ -28,7 +30,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         use_jdbc_metadata_defaults: false
-        ddl-auto: update
+        ddl-auto: create-drop
     show-sql: true
 
 

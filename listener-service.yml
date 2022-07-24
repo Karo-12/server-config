@@ -10,6 +10,8 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.int}s
 spring:
+  zipkin:
+    base-url: http://zipkin:9411
   datasource:
     url: jdbc:postgresql://db:5432/postgres
     username: root
@@ -20,7 +22,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         use_jdbc_metadata_defaults: false
-        ddl-auto: update
+        ddl-auto: create-drop
     show-sql: true
   kafka:
     consumer:
